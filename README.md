@@ -115,29 +115,63 @@ The trick is: there is no trick. These protocols work because they're simple. Th
 
 整蠱唔使本 — trickery needs no capital.
 
+## OG × OG Crossings (cross.mjs)
+
+Cross = new × old = new. Cross new with old = new. Cross cross = reduce friction.
+
+Each hybrid combines two OG protocols into one. Two protocols, one socket. OG DNA recombination.
+
+| Crossing | Port | Parents | What it does |
+|----------|------|---------|--------------|
+| Gophinger | 7070 | Gopher × Finger | menu + query in one (?=finger, else gopher) |
+| EchoQOTD | 7071 | Echo × QOTD | echo back + wisdom appended |
+| TimeChargen | 7072 | Daytime × Chargen | time-stamped data stream |
+| DiscardGopher | 7073 | Discard × Gopher | receive all, return empty menu (zen) |
+| MetaGopher | 7074 | Gopher × Gopher | gopher about gopher (one layer behind) |
+| FingerGopher | 7075 | Finger × Gopher | finger query returns gopher menu |
+| EchoFinger | 7076 | Echo × Finger | echo + citizen status |
+| ChargenQOTD | 7077 | Chargen × QOTD | data stream + wisdom at end |
+| Random Cross | 7099 | random A × B | different combination each startup |
+
+7 × 7 = 49 possible crossings. Infinite DNA. Custom: `node cross.mjs cross echo gopher 7098`
+
+## OG Multiplexer (mux.mjs)
+
+One port. All 7 OG protocols. Auto-detect by prefix. Reduce friction to zero.
+
+| Prefix | Protocol | Example |
+|--------|----------|---------|
+| (none) | Gopher | `echo "" \| nc localhost 7078` |
+| ? | Finger | `echo "?npl" \| nc localhost 7078` |
+| ! | QOTD | `echo "!" \| nc localhost 7078` |
+| @ | Daytime | `echo "@" \| nc localhost 7078` |
+| # | Chargen | `echo "#" \| nc localhost 7078` |
+| = | Echo | `echo "=truth:me" \| nc localhost 7078` |
+| _ | Discard | `echo "_anything" \| nc localhost 7078` |
+| x: | Cross | `echo "x:echo×qotd" \| nc localhost 7078` |
+
+7 OGs. 1 port. Friction = 0.
+
 ## Tests
 
-18 tests, all passing:
+18 core tests + 24 cross/mux tests, all passing (42 total):
 
 ```
+# Core protocols
 ✓ QOTD returns a quote with timestamp
-✓ Daytime returns kingdom heartbeat time
 ✓ Echo returns exactly what was sent (substrate honesty)
-✓ Echo returns lies too (honest mirror)
-✓ Chargen streams kingdom data
-✓ Finger returns citizen list with no query
-✓ Finger npl query returns verb list
-✓ Finger love query returns loop stats
-✓ Finger trickster query returns protocol status
 ✓ Gopher root menu has kingdom links
-✓ Gopher npl-verbs selector returns verbs
-✓ Gopher mindicraft selector returns entries
-✓ Gopher youspeak-wisdom selector returns wisdom
-✓ Gopher unknown selector returns 404
-✓ Dashboard serves HTML at /
-✓ Dashboard /api/status returns JSON
-✓ Dashboard /api/qotd returns a quote
-✓ Dashboard /api/gopher returns gopher menu
+...
+
+# Crossings + mux
+✓ Gophinger gopher mode (empty input → gopher menu)
+✓ Gophinger finger mode (?npl → finger response)
+✓ EchoQOTD echoes input + appends wisdom
+✓ MetaGopher rfc selector returns RFC info
+✓ Mux gopher mode (empty → gopher menu)
+✓ Mux cross mode (x:echo×qotd)
+✓ Mux discard mode (_text → silence)
+...
 ```
 
 ## Lineage

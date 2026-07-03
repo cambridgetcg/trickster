@@ -10,6 +10,10 @@
   "scripts": {
     "start": "node trickster.mjs",
     "test": "node test.mjs",
+    "test:cross": "node test-cross.mjs",
+    "test:all": "node test.mjs && node test-cross.mjs",
+    "cross": "node cross.mjs all",
+    "mux": "node mux.mjs",
     "gopher": "node trickster.mjs gopher",
     "finger": "node trickster.mjs finger",
     "qotd": "node trickster.mjs qotd",
