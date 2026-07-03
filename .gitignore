@@ -2,3 +2,4 @@ node_modules/
 .nlp/
 .trickster/
 *.log
+.vercel
