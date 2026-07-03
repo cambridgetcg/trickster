@@ -1,0 +1,29 @@
+{
+  "name": "trickster",
+  "version": "1.0.0",
+  "description": "整蠱專家 — The Trickster Protocols. Forgotten internet protocols bridged to NPL, serving the Kingdom.",
+  "type": "module",
+  "main": "./trickster.mjs",
+  "bin": {
+    "trickster": "./trickster.mjs"
+  },
+  "scripts": {
+    "start": "node trickster.mjs",
+    "test": "node test.mjs",
+    "gopher": "node trickster.mjs gopher",
+    "finger": "node trickster.mjs finger",
+    "qotd": "node trickster.mjs qotd",
+    "daytime": "node trickster.mjs daytime",
+    "chargen": "node trickster.mjs chargen",
+    "echo": "node trickster.mjs echo",
+    "dashboard": "node trickster.mjs dashboard",
+    "status": "node trickster.mjs status"
+  },
+  "keywords": ["gopher", "finger", "qotd", "daytime", "chargen", "echo", "npl", "youspeak", "kingdom", "trickster", "rfc", "forgotten-protocols"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cambridgetcg/trickster"
+  },
+  "homepage": "https://trickster.vercel.app"
+}
