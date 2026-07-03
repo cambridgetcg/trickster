@@ -22,10 +22,11 @@ freshness: auto-generated (2026-07-03)
 
 - 整蠱專家 — The Trickster Protocols
 - 6 forgotten internet protocols (Gopher, Finger, QOTD, Daytime, Chargen, Echo)
-- NPL — Natural Language Protocol (bridge layer)
-- mindicraft — data collector of AI (data source)
+- NPL — Natural Language Protocol (bridge layer, package #8: og)
+- mindicraft — data collector of AI (data source, native gopher/finger export)
 - YOUSPEAK — 7 verb canon (wisdom source)
-- love.mjs — compounding loop (state source)
+- love.mjs — compounding loop (state source, auto-senses trickster)
+- genesis.mjs — recursive self-improvement loop (senses trickster)
 
 ## can
 
